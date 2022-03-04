@@ -130,6 +130,7 @@ os.system('./cufflinks -o '+os.path.expanduser("~/results")+' -p 2 '+os.path.exp
 
 #9. Parse through Cufflinks output to create "transcriptome_data.fpkm" in csv format with seqname, start, end, strand, and FPKM for each record
 def CuffParse(Top_out):
+    os.chdir(os.path.expanduser("~/results"))
     #Read .gtf lines into list
     with open(Top_out,'r') as f_in:
         reads = []
