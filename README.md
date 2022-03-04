@@ -12,7 +12,7 @@ Sra toolkit can be downloaded for ubuntu from the [github page](https://github.c
 ```
 wget --output-document sratoolkit.tar.gz http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz
 ```
-The [installation page](https://github.com/ncbi/sra-tools/wiki/02.-Installing-SRA-Toolkit) has info for installing to other machines.
+The [installation page](https://github.com/ncbi/sra-tools/wiki/02.-Installing-SRA-Toolkit) has info for installing to other machines, but this wrapper depends on Linux software.
 
 The file should be extracted into your home directory using
 ```
@@ -24,7 +24,7 @@ SPAdes can be downloaded for Linux from the [github page](https://github.com/abl
 ```
  wget http://cab.spbu.ru/files/release3.15.4/SPAdes-3.15.4-Linux.tar.gz
 ```
-The [installation page](https://github.com/ablab/spades#sec2) has info for installing to other machines.
+The [installation page](https://github.com/ablab/spades#sec2) has info for installing to other machines, but this wrapper depends on Linux software
 
 The file should be extracted into your home directory using
 ```
@@ -61,4 +61,7 @@ Bowtie2 (2.4.5) can be installed with
 wget https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.4.5/bowtie2-2.4.5-linux-x86_64.zip/download
 unzip bowtie2-2.4.5-linux-x86_64.zip
 ```
-Note: Bowtie2 files need to be downloaded to the same path as TopHat2 to function correctly
+Note: Bowtie2 files need to be downloaded to the same path as TopHat2 to function correctly. This can be done by creating a Path or moving the unzipped contents to tophat:
+```
+mv ~/bowtie2-2.4.5-linux-x86_64/* ~/tophat-2.2.1.Linux_x86_64
+```
