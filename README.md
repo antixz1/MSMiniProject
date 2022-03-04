@@ -72,7 +72,7 @@ Note: Example output/input for each pipeline step can be found in the examples f
 ## Running
 The python code automates the use of the installed software to efficiently analyze genomes. This specifically works with E. coli K-12 data, but can be edited for other types of genetic data. After correct installation of prerequisites, the pipeline can be run with
 ```
-python3 TestSSH.py
+python3 MSMiniProject.py
 ```
 All output files will be placed into a results folder, which is created in your home directory automatically.
 ## Data Acquisition 
