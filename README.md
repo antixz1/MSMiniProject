@@ -3,6 +3,8 @@
 # Introduction
 This is a Linux-based python wrapper for a pipeline that takes in an sra accession for E.coli Illumina Reads, assembles the genome, analyzes contigs to predict CDS and their functionalties, and analyzes the transcriptome expression.
 # Installation
+## External file requirement
+This pipeline encorporates a multi-fasta file called Ecoli.fasta to serve as the subject being quieried against in a Blastp run. This file is obtained through prokka, but is not automated in this pipeline, so it must be in your home directory to run correctly.
 ## Python3 and Blast+
 Python3 and Blast+ must be installed on your system to properly run.
 The file MSMiniProject.py should be downloaded from this repository to run with python3.
@@ -73,7 +75,7 @@ The python code automates the use of the installed software to efficiently analy
 ```
 python3 MSMiniProject.py
 ```
-All output files will be placed into a results folder, which is created in your home directory automatically.
+All output files will be placed into a results folder, which is created in your home directory automatically. A .log file called miniproject.log can be found in this folder with useful data from the pipeline.
 ## Data Acquisition 
 The pipeline uses sratoolkit and a predefined accession code to obtain sra data from ncbi and translate it to .fastq format. 
 
