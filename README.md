@@ -57,5 +57,8 @@ tar -xf cufflinks-2.2.1.Linux_x86_64.tar.gz
 ```
 
 Bowtie2 (2.4.5) can be installed with
+```
 wget https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.4.5/bowtie2-2.4.5-linux-x86_64.zip/download
-
+unzip bowtie2-2.4.5-linux-x86_64.zip
+```
+Note: Bowtie2 files need to be downloaded to the same path as TopHat2 to function correctly
