@@ -65,3 +65,21 @@ Note: Bowtie2 files need to be downloaded to the same path as TopHat2 to functio
 ```
 mv ~/bowtie2-2.4.5-linux-x86_64/* ~/tophat-2.2.1.Linux_x86_64
 ```
+
+# Utility
+## Running
+The python code automates the use of the installed software to efficiently analyze genomes. This specifically works with E. coli K-12 data, but can be edited for other types of genetic data. After correct installation of prerequisites, the pipeline can be run with
+```
+python3 TestSSH.py
+```
+All output files will be placed into a results folder, which is created in your home directory automatically.
+## Data Acquisition 
+The pipeline uses sratoolkit and a predefined accession code to obtain sra data from ncbi and translate it to .fastq format. 
+
+## Genome Assembly
+SPAdes then assembles the genome and all irrelevent contigs (<1000bp) are parsed out.
+## Gene Prediction
+GeneMarkS-2 takes the .fasta file generated with SPAdes and predicts coding sequences within the genome. However, GeneMarkS-2 fails to predict what these CDS are. Along with the pre-required multi-fasta Ecoli file from prokka, as well as the predicted CDS, a blastp is run to align and annotate these CDS.
+The predicted functionality is then compared against the RefSeq for E. coli K-12.
+## Transcriptomics
+Sratoolkit is used to obtain the Rna-Seq data for E. coli K-12, but instead of SPAdes assembly, TopHat maps the .fastq formatted data to a Bowtie2 index, automatically created with the complete annotated genome NC_000913. The output is pushed through Cufflinks to quantify this expression.
