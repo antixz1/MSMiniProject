@@ -1,12 +1,13 @@
 # MichaelMiniProject
 
 # Introduction
-This is a Linux-based python wrapper for a pipeline that takes in an sra accession for E.coli Illumina Reads, assemble the genome, analyze contigs to predict CDS and their functionalties, 
+This is a Linux-based python wrapper for a pipeline that takes in an sra accession for E.coli Illumina Reads, assembles the genome, analyzes contigs to predict CDS and their functionalties, and analyzes the transcriptome expression.
 # Installation
 ## Python3
-Python3 must be installed to properly run
+Python3 must be installed on your system to properly run.
+The file MSMiniProject.py should be downloaded from this repository.
 ## Blast+
-Blast+ must be installed to properly run
+Blast+ must be installed on your system to properly run.
 ## Sratoolkit
 Sra toolkit can be downloaded for ubuntu from the [github page](https://github.com/ncbi/sra-tools) by running
 ```
@@ -67,6 +68,7 @@ mv ~/bowtie2-2.4.5-linux-x86_64/* ~/tophat-2.2.1.Linux_x86_64
 ```
 
 # Utility
+Note: Example output/input for each pipeline step can be found in the examples folder within this repository.
 ## Running
 The python code automates the use of the installed software to efficiently analyze genomes. This specifically works with E. coli K-12 data, but can be edited for other types of genetic data. After correct installation of prerequisites, the pipeline can be run with
 ```
@@ -78,8 +80,11 @@ The pipeline uses sratoolkit and a predefined accession code to obtain sra data 
 
 ## Genome Assembly
 SPAdes then assembles the genome and all irrelevent contigs (<1000bp) are parsed out.
+
 ## Gene Prediction
 GeneMarkS-2 takes the .fasta file generated with SPAdes and predicts coding sequences within the genome. However, GeneMarkS-2 fails to predict what these CDS are. Along with the pre-required multi-fasta Ecoli file from prokka, as well as the predicted CDS, a blastp is run to align and annotate these CDS.
 The predicted functionality is then compared against the RefSeq for E. coli K-12.
+
 ## Transcriptomics
 Sratoolkit is used to obtain the Rna-Seq data for E. coli K-12, but instead of SPAdes assembly, TopHat maps the .fastq formatted data to a Bowtie2 index, automatically created with the complete annotated genome NC_000913. The output is pushed through Cufflinks to quantify this expression.
+
