@@ -1,7 +1,7 @@
 # MichaelMiniProject
 
 # Introduction
-This is a python wrapper for a pipeline that takes in an sra accession for E.coli Illumina Reads, assemble the genome, analyze contigs to predict CDS and their functionalties, 
+This is a Linux-based python wrapper for a pipeline that takes in an sra accession for E.coli Illumina Reads, assemble the genome, analyze contigs to predict CDS and their functionalties, 
 ## Installation
 ### Python3
 Python3 must be installed to properly run
@@ -44,16 +44,18 @@ cp gm_key_64 ~/.gmhmmp2_key
 ```
 Note: The key may be hidden in your home directory because it starts with '.' 
 ### TopHat2, Cufflinks, Bowtie2
-TopHat2 can be installed to the home directory with 
+TopHat2 (2.2.1) can be installed to the home directory with 
 ```
 wget https://ccb.jhu.edu/software/tophat/downloads/tophat-2.1.1.Linux_x86_64.tar.gz
 tar -xf tophat-2.1.1.Linux_x86_64.tar.gz
 ```
 
-Cufflinks can be installed to the home directory with 
+Cufflinks (2.2.1) can be installed to the home directory with 
 ```
 wget http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-2.2.1.Linux_x86_64.tar.gz
 tar -xf cufflinks-2.2.1.Linux_x86_64.tar.gz
 ```
 
+Bowtie2 (2.4.5) can be installed with
+wget https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.4.5/bowtie2-2.4.5-linux-x86_64.zip/download
 
