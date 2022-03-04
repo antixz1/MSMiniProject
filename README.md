@@ -3,11 +3,10 @@
 # Introduction
 This is a Linux-based python wrapper for a pipeline that takes in an sra accession for E.coli Illumina Reads, assembles the genome, analyzes contigs to predict CDS and their functionalties, and analyzes the transcriptome expression.
 # Installation
-## Python3
-Python3 must be installed on your system to properly run.
-The file MSMiniProject.py should be downloaded from this repository.
-## Blast+
-Blast+ must be installed on your system to properly run.
+## Python3 and Blast+
+Python3 and Blast+ must be installed on your system to properly run.
+The file MSMiniProject.py should be downloaded from this repository to run with python3.
+
 ## Sratoolkit
 Sra toolkit can be downloaded for ubuntu from the [github page](https://github.com/ncbi/sra-tools) by running
 ```
