@@ -1,4 +1,4 @@
-#Python Wrapper
+#Python Wrapper for Genome Analysis Pipeline by Michael Saban, COMP 483
 import os
 import subprocess
 import csv
