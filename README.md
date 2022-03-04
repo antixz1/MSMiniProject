@@ -1,4 +1,4 @@
-# MichaelMiniProject
+# MSMiniProject
 
 # Introduction
 This is a Linux-based python wrapper for a pipeline that takes in an sra accession for E.coli Illumina Reads, assembles the genome, analyzes contigs to predict CDS and their functionalties, and analyzes the transcriptome expression.
